@@ -20,15 +20,15 @@ test -e /var/share/backup/.mounted || exit 0
 dropbox_uploader -s \
     -f /etc/dropbox_uploader \
     upload \
-    $BACKUP/* Apps/backup-manager/
+    $BACKUP/* /
 
 # Delete things that have been purged locally
-dropbox_uploader list /Apps/backup-manager \
+dropbox_uploader list / \
     | egrep '\[F\]' \
     | awk '{$1=""; $2=""; print}' \
     | while read f; \
         do test -f "$BACKUP/$f" \
-        || dropbox_uploader delete "/Apps/backup-manager/$f"; \
+        || dropbox_uploader delete "/$f"; \
     done
 
 # That's it!
