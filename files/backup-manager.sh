@@ -16,19 +16,4 @@ test -e /var/share/backup/.mounted || exit 0
 # Generate the backup
 /usr/sbin/backup-manager || exit $?
 
-# Then, upload it to dropbox
-dropbox_uploader -s \
-    -f /etc/dropbox_uploader \
-    upload \
-    $BACKUP/* /
-
-# Delete things that have been purged locally
-dropbox_uploader list / \
-    | egrep '\[F\]' \
-    | awk '{$1=""; $2=""; print}' \
-    | while read f; \
-        do test -f "$BACKUP/$f" \
-        || dropbox_uploader delete "/$f"; \
-    done
-
 # That's it!

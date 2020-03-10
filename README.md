@@ -15,7 +15,7 @@ customizations:
 
 * A local DNS cache is installed using djbdns
 * sSMTP is used to route outgoing email through Gmail
-* Nightly backups are taken to a Samba volume and uploaded to dropbox
+* Nightly backups are taken to a Samba volume
 * Nightly unattended upgrades are enabled
 * metricbeat is installed to send performance data to an elasticsearch node
 
