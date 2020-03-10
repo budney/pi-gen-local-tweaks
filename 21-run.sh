@@ -5,6 +5,10 @@ if [ -z "$CONF_SSMTP" ]; then
     exit 0
 fi
 
+# SSMTP config for emails in Len's name
+install -m 440 -o root -g root files/ssmtp.conf "${ROOTFS_DIR}/etc/ssmtp/"
+install -m 440 -o root -g root files/revaliases "${ROOTFS_DIR}/etc/ssmtp/"
+
 # SSMTP configs
 for file in ssmtp.conf revaliases; do
     install -m 440 -o root -g root files/${file} "${ROOTFS_DIR}/etc/ssmtp/"
