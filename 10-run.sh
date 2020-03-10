@@ -11,12 +11,7 @@ install -m 600 -o root -g root files/credentials "${ROOTFS_DIR}/etc/samba"
 sed -i -e "s}SMB_USER}${SMB_USER}}" "${ROOTFS_DIR}/etc/samba/credentials"
 sed -i -e "s}SMB_PASS}${SMB_PASS}}" "${ROOTFS_DIR}/etc/samba/credentials"
 
-# Dropbox uploader
-install -m 700 -o root -g root files/dropbox_uploader.sh "${ROOTFS_DIR}/usr/local/bin/dropbox_uploader"
-echo "OAUTH_ACCESS_TOKEN=${OAUTH_ACCESS_TOKEN}" > "${ROOTFS_DIR}/etc/dropbox_uploader"
-chmod 0400 "${ROOTFS_DIR}/etc/dropbox_uploader"
-
-# Backup manager (depends on dropbox uploader)
+# Backup manager
 install -m 400 -o root -g root files/backup-manager.sh   "${ROOTFS_DIR}/etc/cron.daily/backup-manager"
 install -m 400 -o root -g root files/backup-manager.conf "${ROOTFS_DIR}/etc/backup-manager"
 sed -i -e "s}SYSTEM_EMAIL_RECIPIENT}${SYSTEM_EMAIL_RECIPIENT}}" "${ROOTFS_DIR}/etc/backup-manager.conf"
