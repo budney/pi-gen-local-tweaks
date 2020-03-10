@@ -1,0 +1,3 @@
+
+# Samba shares
+//smb.lan.jeenyus.net/backup /var/share/backup cifs auto,_netdev,credentials=/etc/samba/credentials,file_mode=0664,dir_mode=0775 0 0

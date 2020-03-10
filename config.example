@@ -1,0 +1,28 @@
+# Build stuff
+IMG_NAME=Raspbian_Plus
+APT_PROXY=http://172.17.0.1:3142
+
+# Things likely to change
+TARGET_HOSTNAME=raspberrypi.example.net
+export HOST_IP=192.158.1.100
+export CONF_ELASTICSEARCH=""  # 1 to enable, "" to disable
+export CONF_SSMTP=1           # 1 to enable, "" to disable
+
+# Backup stuff
+export SYSTEM_EMAIL_RECIPIENT=my.email@example.net
+
+# Dropbox stuff
+OAUTH_ACCESS_TOKEN=<OAUTH TOKEN>
+
+# SSMTP stuff
+export SSMTP_USER=my.email@example.net
+export SSMTP_PASS=GMAIL_APP_PASSWORD
+export SSMTP_ROOT_ALIAS=root@mylan.local
+
+# Things unlikely to change
+ENABLE_SSH=1
+FIRST_USER_NAME=pi
+FIRST_USER_PASS=pi
+LOCALE_DEFAULT=en_US.UTF-8
+TIMEZONE_DEFAULT=America/New_York
+KEYBOARD_LAYOUT="English (US)"

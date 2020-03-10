@@ -1,0 +1,10 @@
+[Unit]
+Description=DJB daemontools
+After=sysinit.target
+
+[Service]
+ExecStart=/command/svscanboot
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

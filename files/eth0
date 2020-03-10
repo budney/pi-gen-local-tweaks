@@ -1,0 +1,7 @@
+auto eth0
+allow-hotplug eth0
+iface eth0 inet static
+    address HOST_IP
+    netmask 255.255.255.0
+    gateway 172.18.153.1
+

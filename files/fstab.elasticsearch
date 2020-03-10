@@ -1,0 +1,3 @@
+
+# External SSD
+PARTUUID=94564b2f-01  /media/ssd      ext4    defaults,noatime  0       1

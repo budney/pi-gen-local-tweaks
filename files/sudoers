@@ -1,0 +1,2 @@
+USER ALL=(ALL) ALL
+USER ALL=NOPASSWD: /sbin/shutdown, /sbin/reboot, /sbin/halt

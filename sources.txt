@@ -1,0 +1,5 @@
+https://repo1.maven.org/maven2/net/java/dev/jna/jna/5.5.0/jna-5.5.0.jar
+https://cr.yp.to/djbdns/djbdns-1.05.tar.gz
+https://cr.yp.to/daemontools/daemontools-0.76.tar.gz
+https://cr.yp.to/ucspi-tcp/ucspi-tcp-0.88.tar.gz
+https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.6.1-amd64.deb
