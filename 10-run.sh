@@ -6,7 +6,7 @@ install -m 440 -o root -g root files/50unattended-upgrades "${ROOTFS_DIR}/etc/ap
 sed -i -e "s}SYSTEM_EMAIL_RECIPIENT}${SYSTEM_EMAIL_RECIPIENT}}" "${ROOTFS_DIR}/etc/apt/apt.conf.d/50unattended-upgrades"
 
 # Samba credentials (needed by backup-manager)
-mkdir /etc/samba
+mkdir "${ROOTFS_DIR}/etc/samba"
 install -m 600 -o root -g root files/credentials "${ROOTFS_DIR}/etc/samba"
 sed -i -e "s}SMB_USER}${SMB_USER}}" "${ROOTFS_DIR}/etc/samba/credentials"
 sed -i -e "s}SMB_PASS}${SMB_PASS}}" "${ROOTFS_DIR}/etc/samba/credentials"
