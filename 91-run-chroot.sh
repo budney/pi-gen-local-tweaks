@@ -39,7 +39,7 @@ if ! id -u Gdnslog >/dev/null 2>&1; then
 fi
 rm -rf /etc/dnscache /service/dnscache
 dnscache-conf Gdnscache Gdnslog /etc/dnscache
-echo 172.18.153.18 > /etc/dnscache/root/servers/@
+echo ${NET_DNS} > /etc/dnscache/root/servers/@
 echo 1 > /etc/dnscache/env/FORWARDONLY
 ln -s /etc/dnscache /service/dnscache
 
