@@ -20,6 +20,7 @@ tar xzf /tmp/daemontools-0.76.tar.gz
 cd admin/daemontools-0.76
 patch -p1 < /tmp/daemontools-0.76.errno.patch
 ./package/install
+sed -i -e '/svscanboot/d' /etc/rc.local
 
 # Build djbdns
 cd /tmp/
