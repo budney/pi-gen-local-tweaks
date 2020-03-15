@@ -16,5 +16,6 @@ for file in ssmtp.conf revaliases; do
     sed -i -e "s/SSMTP_PASS/${SSMTP_PASS}/" "${ROOTFS_DIR}/etc/ssmtp/${file}"
     sed -i -e "s/FIRST_USER_NAME/${FIRST_USER_NAME}/" "${ROOTFS_DIR}/etc/ssmtp/${file}"
     sed -i -e "s/SSMTP_ROOT_ALIAS/${SSMTP_ROOT_ALIAS}/" "${ROOTFS_DIR}/etc/ssmtp/${file}"
+    sed -i -e "s/TARGET_HOSTNAME/${TARGET_HOSTNAME}/" "${ROOTFS_DIR}/etc/ssmtp/${file}"
 done
 
