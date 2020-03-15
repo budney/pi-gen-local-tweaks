@@ -18,8 +18,9 @@ sed -i -e "s}SMB_PASS}${SMB_PASS}}" "${ROOTFS_DIR}/etc/samba/credentials"
 install -m 400 -o root -g root files/backup-manager.sh   "${ROOTFS_DIR}/etc/cron.daily/backup-manager"
 install -m 400 -o root -g root files/backup-manager.conf "${ROOTFS_DIR}/etc/backup-manager"
 sed -i -e "s}SYSTEM_EMAIL_RECIPIENT}${SYSTEM_EMAIL_RECIPIENT}}" "${ROOTFS_DIR}/etc/backup-manager.conf"
-cat files/fstab.backup >> "${ROOTFS_DIR}/etc/fstab"
 mkdir -p "${ROOTFS_DIR}/var/share/backup"
+cat files/fstab.backup >> "${ROOTFS_DIR}/etc/fstab"
+sed -i -e "s}SMB_HOST}${SMB_HOST}}" "${ROOTFS_DIR}/etc/fstab"
 
 # GPG Public Key (needed by backup-manager; must match ${SYSTEM_EMAIL_RECIPIENT})
 install -m 0400 -o root -g root files/pubkey.gpg "${ROOTFS_DIR}/tmp"
