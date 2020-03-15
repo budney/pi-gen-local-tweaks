@@ -1,0 +1,11 @@
+[Unit]
+Description=FirstBootSetup
+ConditionFirstBoot=true
+
+[Service]
+Type=idle
+RemainAfterExit=yes
+ExecStart=/bin/bash /etc/firstboot.sh
+
+[Install]
+WantedBy=multi-user.target

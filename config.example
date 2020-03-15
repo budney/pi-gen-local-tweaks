@@ -3,16 +3,24 @@ IMG_NAME=Raspbian_Plus
 APT_PROXY=http://172.17.0.1:3142
 
 # Things likely to change
-TARGET_HOSTNAME=raspberrypi.example.net
-export HOST_IP=192.158.1.100
-export CONF_ELASTICSEARCH=""  # 1 to enable, "" to disable
+export CONF_ELASTICSEARCH=1   # 1 to enable, "" to disable
 export CONF_SSMTP=1           # 1 to enable, "" to disable
+export CONF_FIRSTBOOT=1       # 1 to enable, "" to disable
+
+# Network stuff
+TARGET_HOSTNAME=raspberrypi.example.net
+export HOST_IP=192.168.1.100
+export NET_GATEWAY=192.168.1.1
+export NET_DNS=208.67.222.222
+export ELASTICSEARCH_IP=192.168.1.100
 
 # Backup stuff
 export SYSTEM_EMAIL_RECIPIENT=my.email@example.net
 
-# Dropbox stuff
-OAUTH_ACCESS_TOKEN=<OAUTH TOKEN>
+# Samba Credentials
+export SMB_USER=<username>
+export SMB_PASS=<password>
+export SMB_HOST=smb.example.com
 
 # SSMTP stuff
 export SSMTP_USER=my.email@example.net
