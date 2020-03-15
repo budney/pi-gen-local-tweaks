@@ -1,0 +1,4 @@
+
+# Use tmpfs for temp folders to spare the SD card
+tmpfs /tmp     tmpfs defaults,noatime,nosuid,mode=0755,size=100m 0 0
+tmpfs /var/tmp tmpfs defaults,noatime,nosuid,mode=0755,size=50m 0 0

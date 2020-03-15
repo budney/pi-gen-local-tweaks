@@ -1,5 +1,8 @@
 #!/bin/bash -e
 
+# Change /tmp and /var/tmp to ram disks to save wear on the SD card
+cat files/fstab.tmp >> "${ROOTFS_DIR}/etc/fstab"
+
 # Auto-upgrades configs
 install -m 440 -o root -g root files/20auto-upgrades       "${ROOTFS_DIR}/etc/apt/apt.conf.d/"
 install -m 440 -o root -g root files/50unattended-upgrades "${ROOTFS_DIR}/etc/apt/apt.conf.d/"
